@@ -128,7 +128,7 @@ public class AirLine {
                 ", departure='" + departure + '\'' +
                 ", destination='" + destination + '\'' +
                 '}';
-    }@E
+    }
 
 
 }
