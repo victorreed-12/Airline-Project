@@ -32,7 +32,7 @@ public class AirLineController {
 		return service.findBookingById(id);
 	}
 	@PostMapping("/booking")
-	public void addBooking(AirlineTicketing booking) {
+	public void addBooking(@RequestBody AirlineTicketing booking) {
 		service.addBooking(booking);
 	}
 	
