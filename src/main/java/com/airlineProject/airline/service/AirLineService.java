@@ -1,6 +1,6 @@
 package com.airlineProject.airline.service;
 
-import com.airlineProject.airline.model.AirLine;
+import com.airlineProject.airline.model.AirlineTicketing;
 import com.airlineProject.airline.repository.AirLineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,29 +13,31 @@ public class AirLineService {
 
 @Autowired
     private AirLineRepository repo;
-    public List<AirLine> bookings = new ArrayList<>();
+    public List<AirlineTicketing> bookings = new ArrayList<>();
 
-    public List<AirLine> getAllAirlineBookings() {
+    public List<AirlineTicketing> getAllAirlineBookings() {
         repo.findAll().forEach(bookings::add);
         //int airlineCapacity= 100;
         //if(airlineCapacity>100)
         System.out.println("Flight is full, check next available flight");
         return bookings;
     }
-    public AirLine findOneById(int id) {
+    public AirlineTicketing findBookingById(int id) {
         return repo.findById(id).orElseThrow();
     }
-    public void addAirline(AirLine booking) {
+    public void addBooking(AirlineTicketing booking) {
         repo.save(booking);
     }
 
-    public void updateAirline(int id, AirLine booking) {
+    public void updateBooking(int id, AirlineTicketing booking) {
         repo.save(booking);
     }
 
-    public void deleteById(int id) {
+    public void cancelBookingById(int id) {
         repo.deleteById(id);
     }
+    
+    
 
 }
 

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-public class AirLine {
+public class AirlineTicketing {
      @Id
     private long id;
     private String customerName;
@@ -18,10 +18,10 @@ public class AirLine {
     private String departure;
     private String destination;
 
-    public AirLine() {
+    public AirlineTicketing() {
     }
 
-    public AirLine(long id, String customerName, String gender, long contactNumber, String email, String airLine, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, String departure, String destination) {
+    public AirlineTicketing(long id, String customerName, String gender, long contactNumber, String email, String airLine, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, String departure, String destination) {
         this.id = id;
         this.customerName = customerName;
         this.gender = gender;
