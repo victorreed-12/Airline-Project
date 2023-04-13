@@ -1,4 +1,4 @@
-package com.airlineProject.airline.airLine;
+package com.airlineProject.airline.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
