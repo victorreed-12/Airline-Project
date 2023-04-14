@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 public class AirlineTicketing {
      @Id
     private long id;
+     private Long ticketNumber;
+     private String tripType;
     private String customerName;
     private String gender;
     private long contactNumber;
@@ -15,14 +17,19 @@ public class AirlineTicketing {
     private String airLine;
     private LocalDateTime departureDateTime;
     private LocalDateTime arrivalDateTime;
+    private LocalDateTime returnDateTime;
     private String departure;
     private String destination;
+    private String returnDeparture;
+    private String returnDestination;
 
     public AirlineTicketing() {
     }
 
-    public AirlineTicketing(long id, String customerName, String gender, long contactNumber, String email, String airLine, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, String departure, String destination) {
+    public AirlineTicketing(long id, Long ticketNumber, String tripType, String customerName, String gender, long contactNumber, String email, String airLine, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, LocalDateTime returnDateTime, String departure, String destination, String returnDeparture, String returnDestination) {
         this.id = id;
+        this.ticketNumber = ticketNumber;
+        this.tripType = tripType;
         this.customerName = customerName;
         this.gender = gender;
         this.contactNumber = contactNumber;
@@ -30,8 +37,32 @@ public class AirlineTicketing {
         this.airLine = airLine;
         this.departureDateTime = departureDateTime;
         this.arrivalDateTime = arrivalDateTime;
+        this.returnDateTime = returnDateTime;
         this.departure = departure;
         this.destination = destination;
+        this.returnDeparture = returnDeparture;
+        this.returnDestination = returnDestination;
+    }
+
+    @Override
+    public String toString() {
+        return "AirlineTicketing{" +
+                "id=" + id +
+                ", ticketNumber=" + ticketNumber +
+                ", tripType='" + tripType + '\'' +
+                ", customerName='" + customerName + '\'' +
+                ", gender='" + gender + '\'' +
+                ", contactNumber=" + contactNumber +
+                ", email='" + email + '\'' +
+                ", airLine='" + airLine + '\'' +
+                ", departureDateTime=" + departureDateTime +
+                ", arrivalDateTime=" + arrivalDateTime +
+                ", returnDateTime=" + returnDateTime +
+                ", departure='" + departure + '\'' +
+                ", destination='" + destination + '\'' +
+                ", returnDeparture='" + returnDeparture + '\'' +
+                ", returnDestination='" + returnDestination + '\'' +
+                '}';
     }
 
     public long getId() {
@@ -40,6 +71,22 @@ public class AirlineTicketing {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Long getTicketNumber() {
+        return ticketNumber;
+    }
+
+    public void setTicketNumber(Long ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+
+    public String getTripType() {
+        return tripType;
+    }
+
+    public void setTripType(String tripType) {
+        this.tripType = tripType;
     }
 
     public String getCustomerName() {
@@ -98,6 +145,14 @@ public class AirlineTicketing {
         this.arrivalDateTime = arrivalDateTime;
     }
 
+    public LocalDateTime getReturnDateTime() {
+        return returnDateTime;
+    }
+
+    public void setReturnDateTime(LocalDateTime returnDateTime) {
+        this.returnDateTime = returnDateTime;
+    }
+
     public String getDeparture() {
         return departure;
     }
@@ -114,21 +169,19 @@ public class AirlineTicketing {
         this.destination = destination;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", gender='" + gender + '\'' +
-                ", contactNumber=" + contactNumber +
-                ", email='" + email + '\'' +
-                ", airLine='" + airLine + '\'' +
-                ", departureDateTime=" + departureDateTime +
-                ", arrivalDateTime=" + arrivalDateTime +
-                ", departure='" + departure + '\'' +
-                ", destination='" + destination + '\'' +
-                '}';
+    public String getReturnDeparture() {
+        return returnDeparture;
     }
 
+    public void setReturnDeparture(String returnDeparture) {
+        this.returnDeparture = returnDeparture;
+    }
 
+    public String getReturnDestination() {
+        return returnDestination;
+    }
+
+    public void setReturnDestination(String returnDestination) {
+        this.returnDestination = returnDestination;
+    }
 }
