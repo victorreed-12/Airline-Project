@@ -27,7 +27,7 @@ public class AirLineController {
 	public List<AirlineTicketing> getAllBookings(){
 		return service.getAllAirlineBookings();
 	}
-	@GetMapping("/booking{id}")
+	@GetMapping("/booking/{id}")
 	public AirlineTicketing findBookingById(@PathVariable int id) {
 		return service.findBookingById(id);
 	}
@@ -36,12 +36,12 @@ public class AirLineController {
 		service.addBooking(booking);
 	}
 	
-	@PutMapping("/booking{id}")
+	@PutMapping("/booking/{id}")
 	public void updateBooking(@PathVariable int id ,@RequestBody AirlineTicketing booking) {
 		service.updateBooking(id,booking);
 	}
 	
-    @DeleteMapping("/booking{id}")
+    @DeleteMapping("/booking/{id}")
     public void cancelBookingById(@PathVariable int id) {
     	service.cancelBookingById(id);
     }
