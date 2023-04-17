@@ -28,7 +28,7 @@ public class AirLineController {
 		return service.getAllAirlineBookings();
 	}
 	@GetMapping("/booking/{id}")
-	public AirlineTicketing findBookingById(@PathVariable int id) {
+	public AirlineTicketing getBookingById(@PathVariable int id) {
 		return service.findBookingById(id);
 	}
 	@PostMapping("/booking")

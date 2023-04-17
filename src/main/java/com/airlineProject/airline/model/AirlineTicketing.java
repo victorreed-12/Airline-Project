@@ -1,8 +1,11 @@
 package com.airlineProject.airline.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+
+
 import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class AirlineTicketing {
@@ -24,6 +27,7 @@ public class AirlineTicketing {
     private String returnDestination;
 
     public AirlineTicketing() {
+        super();
     }
 
     public AirlineTicketing(long id, Long ticketNumber, String tripType, String customerName, String gender, long contactNumber, String email, String airLine, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime, LocalDateTime returnDateTime, String departure, String destination, String returnDeparture, String returnDestination) {

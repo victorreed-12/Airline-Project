@@ -17,9 +17,6 @@ public class AirLineService {
 
     public List<AirlineTicketing> getAllAirlineBookings() {
         repo.findAll().forEach(bookings::add);
-        //int airlineCapacity= 100;
-        //if(airlineCapacity>100)
-        System.out.println("Flight is full, check next available flight");
         return bookings;
     }
     public AirlineTicketing findBookingById(int id) {
